@@ -103,42 +103,46 @@ public class LexicalAnalyser {
 
                         LexicalUnit unit = new LexicalUnit(m.group(), m.start());
                         switch (i) {
-                            case 1:
+                            case 0:
                                 unit.setToken(TokenSets.Start);
                                 break;
-                            case 2:
+                            case 1:
                                 unit.setToken(TokenSets.StartCB);
                                 break;
-                            case 3:
+                            case 2:
                                 unit.setToken(TokenSets.EndCB);
                                 break;
-                            case 4:
+                            case 3:
                                 unit.setToken(TokenSets.StartB);
                                 break;
-                            case 5:
+                            case 4:
                                 unit.setToken(TokenSets.EndB);
                                 break;
-                            case 6:
+                            case 5:
                                 unit.setToken(TokenSets.SemiC);
                                 break;
-                            case 7:
+                            case 6:
                                 unit.setToken(TokenSets.Equal);
+                                break;
+                            case 7:
+                                unit.setToken(TokenSets.LessT);
                                 break;
                             case 9:
                                 unit.setToken(TokenSets.Plus);
                                 break;
-                            case 10:
-                                unit.setToken(TokenSets.LessT);
-                                break;
+
+
                             case 11:
-                                unit.setToken(TokenSets.EndB);
+                                unit.setToken(TokenSets.Values);
                                 break;
+                            case 10:
                             case 12:
-                                unit.setToken(TokenSets.EndB);
-                                break;
                             case 13:
-                                unit.setToken(TokenSets.Start);
+                                unit.setToken(TokenSets.DataType);
                                 break;
+                            case 14: unit.setToken(TokenSets.Identifier);
+                                break;
+
                            
 
                         }
@@ -160,8 +164,9 @@ public class LexicalAnalyser {
 
         Collections.sort(Leximes);
 
+
         Leximes.forEach((x) -> {
-            System.out.println("Lexical Unit " + x.getUnitName());
+            System.out.println(" " + x.getUnitName()+ " "+x.getToken());
         });
     }
 

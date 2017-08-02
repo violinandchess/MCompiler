@@ -22,7 +22,8 @@ public enum TokenSets {
     Equal,
     Plus,
     PP,
-    LessT
+    LessT,
+    Values
     
     
 }

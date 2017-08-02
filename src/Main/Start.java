@@ -20,7 +20,7 @@ public class Start {
         } else if (args.length > 1) {
             System.out.println("Usage java -jar Mcompiler.jar filename.m");
         } else {
-            LexicalAnalyser la = new LexicalAnalyser("D:\\MCompiler\\run\\hello.m");
+            LexicalAnalyser la = new LexicalAnalyser("/home/vibhavi/IdeaProjects/MCompiler/run/hello.m");
             la.StartLexicalAnalyser();
 
         }

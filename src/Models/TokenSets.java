@@ -10,7 +10,7 @@ package Models;
  * @author Vibhavi
  */
 public enum TokenSets {
-    Start,
+    Begin,
     StartCB,
     EndCB,
     DataType,

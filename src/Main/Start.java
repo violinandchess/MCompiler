@@ -6,6 +6,7 @@
 package Main;
 
 import Modules.LexicalAnalyser;
+import Modules.LexicalParser;
 
 /**
  *
@@ -20,8 +21,10 @@ public class Start {
         } else if (args.length > 1) {
             System.out.println("Usage java -jar Mcompiler.jar filename.m");
         } else {
-            LexicalAnalyser la = new LexicalAnalyser("/home/vibhavi/IdeaProjects/MCompiler/run/hello.m");
+            LexicalAnalyser la = new LexicalAnalyser("C:\\Users\\Vibhavi\\Desktop\\MCompiler\\run\\hello.m");
             la.StartLexicalAnalyser();
+            LexicalParser parser=new LexicalParser(la.getLeximes());
+            System.out.println("Syntax Status "+ parser.ValidateSyntax());
 
         }
     }

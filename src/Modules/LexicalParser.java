@@ -46,7 +46,32 @@ public class LexicalParser {
                         }
 
                     } else {
-                      
+
+                        if (Tokens.get(i).getToken() == TokenSets.Loop) {
+                            if (Tokens.get(i + 1).getToken() != TokenSets.StartB) {
+                                System.out.println("missing ( Near " + Tokens.get(i).getUnitName());
+                            }
+                            if (Tokens.get(i + 13).getToken() == TokenSets.EndB) {
+                                if (Tokens.get(i + 14).getToken() != TokenSets.StartCB) {
+                                    System.out.println("missing { Near " + Tokens.get(i).getUnitName());
+                                }
+                                if (Tokens.get(i + 14).getToken() != TokenSets.StartCB) {
+                                    System.out.println("missing { Near " + Tokens.get(i).getUnitName());
+                                }
+                            } else {
+                                System.out.println("missing ) Near " + Tokens.get(i).getUnitName());
+                            }
+                            if (Tokens.get(i + 7).getToken() == TokenSets.LessT) {
+
+                            } else {
+                                System.out.println("missing Condition Near " + Tokens.get(i).getUnitName());
+                            }
+                            if (Tokens.get(i + 9).getToken() == TokenSets.SemiC) {
+
+                            } else {
+                                System.out.println("missing Semicolon Near " + Tokens.get(i).getUnitName());
+                            }
+                        }
                     }
 
                 }

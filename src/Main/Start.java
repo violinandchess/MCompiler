@@ -21,10 +21,17 @@ public class Start {
         } else if (args.length > 1) {
             System.out.println("Usage java -jar Mcompiler.jar filename.m");
         } else {
-            LexicalAnalyser la = new LexicalAnalyser("C:\\Users\\Vibhavi\\Desktop\\MCompiler\\run\\hello.m");
+            LexicalAnalyser la = new LexicalAnalyser(args[0]);
             la.StartLexicalAnalyser();
             LexicalParser parser=new LexicalParser(la.getLeximes());
-            System.out.println("Syntax Status "+ parser.ValidateSyntax());
+            boolean status=parser.ValidateSyntax();
+            if(status)
+            {
+                System.out.println("Parsed SuccessFully No Erros");
+            }else
+            {
+                System.out.println("Parsing Errors");
+            }
 
         }
     }

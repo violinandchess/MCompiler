@@ -77,8 +77,9 @@ public class LexicalAnalyser {
                                 LexicalUnit unit = new LexicalUnit(m.group(), m.start());
                                 unit.setToken(TokenSets.PP);
                                 Leximes.add(unit);
-                                
-                            }   break;
+
+                            }
+                            break;
                         case 14:
                             String check = copy.substring(pattenold, pattenend);
                             boolean found = false;
@@ -86,14 +87,16 @@ public class LexicalAnalyser {
                                 if (temp.getUnitName().equals(check)) {
                                     found = true;
                                 }
-                                
-                            }   if (found == false) {
-                                
+
+                            }
+                            if (found == false) {
+
                                 LexicalUnit unit = new LexicalUnit(m.group(), m.start());
                                 unit.setToken(TokenSets.Identifier);
                                 Leximes.add(unit);
-                                
-                            }   break;
+
+                            }
+                            break;
                         default:
                             LexicalUnit unit = new LexicalUnit(m.group(), m.start());
                             switch (i) {
@@ -124,22 +127,24 @@ public class LexicalAnalyser {
                                 case 9:
                                     unit.setToken(TokenSets.Plus);
                                     break;
-                                    
-                                    
+
                                 case 11:
                                     unit.setToken(TokenSets.Values);
                                     break;
+
+                                case 13:
+                                    unit.setToken(TokenSets.Loop);
+                                    break;
                                 case 10:
                                 case 12:
-                                case 13:
                                     unit.setToken(TokenSets.DataType);
                                     break;
-                                case 14: unit.setToken(TokenSets.Identifier);
-                                break;
-                                
-                                
-                                
-                            }   Leximes.add(unit);
+                                case 14:
+                                    unit.setToken(TokenSets.Identifier);
+                                    break;
+
+                            }
+                            Leximes.add(unit);
                             break;
                     }
 
@@ -156,16 +161,14 @@ public class LexicalAnalyser {
     public void PrintTokens() {
 
         Collections.sort(Leximes);
-
-
+        System.out.println("Tokenized Lexical Units");
         Leximes.forEach((x) -> {
-            System.out.println(" " + x.getUnitName()+ " "+x.getToken());
+            System.out.println("Lexime Unit: " + x.getUnitName() + " Tdentified Token: " + x.getToken());
         });
     }
 
     public ArrayList<LexicalUnit> getLeximes() {
         return Leximes;
     }
-    
 
 }

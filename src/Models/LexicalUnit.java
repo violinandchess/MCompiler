@@ -11,8 +11,8 @@ package Models;
  */
 public class LexicalUnit implements Comparable<LexicalUnit> {
 
-    private String UnitName;
-    private int Position;
+    private final String UnitName;
+    private final int Position;
     private TokenSets Token;
 
     public TokenSets getToken() {

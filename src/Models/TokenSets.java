@@ -24,6 +24,5 @@ public enum TokenSets {
     PP,
     LessT,
     Values
-    
-    
+
 }

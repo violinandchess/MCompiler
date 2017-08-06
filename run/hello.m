@@ -1,12 +1,14 @@
 Start{
 
-int a = 10;
+
+int a = d;
 float c = 1;
 
-for(int b = 0; b < 5; b++)
+for(int b = 0; b<5; b++)
 {
 	a = a + c;
 }
+
 
 
 }
